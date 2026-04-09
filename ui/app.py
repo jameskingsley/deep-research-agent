@@ -29,7 +29,8 @@ def create_pdf(text, topic):
 # Custom Styling 
 st.markdown("""
     <style>
-    .report-container {
+    /* Style the native Streamlit container to look like our report box */
+    [data-testid="stVerticalBlockBorderControl"] {
         padding: 20px;
         border-radius: 5px;
         background-color: #ffffff;
@@ -80,7 +81,9 @@ if st.button("Execute Research"):
                     
                     with col1:
                         st.markdown("### Analysis Report")
-                        st.markdown(f'<div class="report-container">{report_data}</div>', unsafe_allow_html=True)
+                        # Using border=True ensures Markdown renders perfectly inside a styled box
+                        with st.container(border=True):
+                            st.markdown(report_data)
                     
                     with col2:
                         st.write("### Exports")
