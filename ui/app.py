@@ -65,7 +65,7 @@ if st.button("Execute Research"):
             try:
                 # API Call to FastAPI backend
                 res = requests.post(
-                    "http://localhost:8000/research", 
+                    "https://deep-research-agent-3nl8.onrender.com/research", 
                     json={"topic": topic},
                     timeout=300
                 )
