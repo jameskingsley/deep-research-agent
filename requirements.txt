@@ -7,3 +7,4 @@ uvicorn
 streamlit
 python-dotenv
 arize-phoenix
+openinference-instrumentation-llama-index
